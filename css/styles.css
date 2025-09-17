@@ -499,9 +499,16 @@ section h2, section h3 {
     gap: 5px;
     width: 100%;
     height: fit-content;
-    overflow: visible;
-    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    justify-content: flex-start;
     align-items: flex-start;
+}
+
+.life-grid.month-view::-webkit-scrollbar {
+    display: none; /* WebKit browsers (Chrome, Safari, Edge) */
 }
 
 .month-row {
@@ -626,7 +633,7 @@ section h2, section h3 {
     
     .life-grid.month-view {
         overflow-x: auto;
-        overflow-y: visible;
+        overflow-y: hidden;
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* Internet Explorer 10+ */
         display: flex;
@@ -635,6 +642,8 @@ section h2, section h3 {
         justify-content: flex-start;
         align-items: flex-start;
         padding-bottom: 20px;
+        height: auto;
+        max-height: none;
     }
     
     .life-grid.month-view::-webkit-scrollbar {
