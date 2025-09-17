@@ -31,6 +31,7 @@
             <!-- Life Calendar Section -->
             <div class="calendar-section" id="calendarSection" style="display: none;">
             <div class="user-info">
+                <div class="quote-text" id="quoteText">Decay is the fate of flesh, not of the soul.</div>
                 <div class="user-name-container">
                     <img src="assets/hourglass.svg" alt="Hourglass" class="hourglass-icon">
                     <h2 id="userName"></h2>
@@ -107,10 +108,104 @@
             </div>
         </main>
 
+    <!-- Examination of Conscience Modal -->
+    <div id="examinationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>EXAMINATION OF CONSCIENCE</h3>
+                <span class="close" id="examinationClose">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="examination-section">
+                    <h4>THE TEN COMMANDMENTS</h4>
+                    <div class="commandment">
+                        <strong>1. I am the Lord your God; you shall not have strange gods before me.</strong>
+                        <ul>
+                            <li>Have I doubted or denied God's existence?</li>
+                            <li>Have I failed to pray daily?</li>
+                            <li>Have I put other things before God?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>2. You shall not take the name of the Lord your God in vain.</strong>
+                        <ul>
+                            <li>Have I used God's name carelessly or irreverently?</li>
+                            <li>Have I sworn falsely or made false promises?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>3. Remember to keep holy the Lord's day.</strong>
+                        <ul>
+                            <li>Have I missed Mass on Sunday or Holy Days?</li>
+                            <li>Have I been inattentive at Mass?</li>
+                            <li>Have I done unnecessary work on Sunday?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>4. Honor your father and your mother.</strong>
+                        <ul>
+                            <li>Have I disobeyed my parents?</li>
+                            <li>Have I failed to help them when needed?</li>
+                            <li>Have I been disrespectful to authority?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>5. You shall not kill.</strong>
+                        <ul>
+                            <li>Have I harmed others physically or emotionally?</li>
+                            <li>Have I been angry or held grudges?</li>
+                            <li>Have I supported abortion or euthanasia?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>6. You shall not commit adultery.</strong>
+                        <ul>
+                            <li>Have I been unfaithful to my spouse?</li>
+                            <li>Have I engaged in impure thoughts or actions?</li>
+                            <li>Have I used others for my own pleasure?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>7. You shall not steal.</strong>
+                        <ul>
+                            <li>Have I taken what doesn't belong to me?</li>
+                            <li>Have I cheated or been dishonest?</li>
+                            <li>Have I failed to pay debts?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>8. You shall not bear false witness against your neighbor.</strong>
+                        <ul>
+                            <li>Have I lied or spread false rumors?</li>
+                            <li>Have I gossiped or slandered others?</li>
+                            <li>Have I failed to defend others' reputations?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>9. You shall not covet your neighbor's wife.</strong>
+                        <ul>
+                            <li>Have I had impure thoughts about others?</li>
+                            <li>Have I been envious of others' relationships?</li>
+                        </ul>
+                    </div>
+                    <div class="commandment">
+                        <strong>10. You shall not covet your neighbor's goods.</strong>
+                        <ul>
+                            <li>Have I been envious of others' possessions?</li>
+                            <li>Have I been greedy or materialistic?</li>
+                            <li>Have I failed to be generous to those in need?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="js/storage.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/journal.js"></script>
     <script src="js/audio.js"></script>
+    <script src="js/examination.js"></script>
     <script src="js/app.js"></script>
 </body>
 </html>
