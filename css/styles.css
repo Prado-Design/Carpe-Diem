@@ -1,0 +1,610 @@
+/* BRUTALIST DESIGN - MINIMAL AND BOLD */
+
+/* CUSTOM CURSOR - BEST PRACTICES */
+html, body, * {
+    cursor: url('/cursor.png') 16 16, auto !important;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* REMOVED CONTAINER AND HEADER - NO LONGER NEEDED */
+
+/* DIETER RAMS BRUTALIST MEDIA PLAYER */
+.media-player {
+    background-color: #000;
+    border: 1px solid #fff;
+    width: 320px;
+    height: 160px;
+    padding: 0;
+    margin: 20px auto;
+}
+
+.player-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 15px 20px;
+    gap: 15px;
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 1;
+}
+
+.track-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.track-number {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #666;
+    margin-bottom: 2px;
+    letter-spacing: 1px;
+}
+
+.track-title {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist {
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #999;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track-artist.scrolling {
+    animation: scrollText 18s linear infinite;
+    text-overflow: unset;
+}
+
+@keyframes scrollText {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.progress-section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.time-display {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Courier New', monospace;
+    font-size: 0.7rem;
+    color: #999;
+    letter-spacing: 0.5px;
+}
+
+.progress-bar {
+    position: relative;
+    height: 2px;
+    background-color: #333;
+    cursor: pointer;
+}
+
+.progress-track {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #fff;
+    width: 0%;
+    transition: width 0.1s ease;
+}
+
+.progress-handle {
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.progress-bar:hover .progress-handle {
+    opacity: 1;
+}
+
+.player-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn, .mute-btn, .nav-btn {
+    width: 32px;
+    height: 32px;
+    background-color: #000;
+    border: 1px solid #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.nav-btn {
+    font-size: 0.7rem;
+}
+
+.play-btn:hover, .mute-btn:hover, .nav-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.play-icon {
+    width: 0;
+    height: 0;
+    border-left: 8px solid #fff;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    margin-left: 2px;
+    transition: all 0.15s ease;
+}
+
+.play-btn:hover .play-icon {
+    border-left-color: #000;
+}
+
+.play-icon.paused {
+    width: 8px;
+    height: 12px;
+    border: none;
+    background-color: #fff;
+    margin-left: 0;
+}
+
+.play-btn:hover .play-icon.paused {
+    background-color: #000;
+}
+
+.mute-icon {
+    width: 12px;
+    height: 8px;
+    background-color: #fff;
+    position: relative;
+    transition: all 0.15s ease;
+}
+
+.mute-btn:hover .mute-icon {
+    background-color: #000;
+}
+
+.mute-icon::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: -4px;
+    width: 6px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 0 2px 2px 0;
+    transition: all 0.15s ease;
+}
+
+.mute-btn:hover .mute-icon::after {
+    background-color: #000;
+}
+
+.mute-icon.muted {
+    background-color: #666;
+}
+
+.mute-icon.muted::after {
+    background-color: #666;
+}
+
+.record-display {
+    width: 40px;
+    height: 40px;
+    position: relative;
+}
+
+.record {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.record.spinning {
+    animation: spin 3s linear infinite;
+}
+
+.record-grooves {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+
+.record-grooves::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 1px solid #333;
+    border-radius: 50%;
+}
+
+.record-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background-color: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#backgroundMusic {
+    display: none;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* MAIN SECTIONS */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.calendar-section {
+    width: 100vw;
+    height: 100vh;
+    margin-left: calc(-50vw + 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section h2, section h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 0.1em;
+}
+
+/* PROFILE FORM */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.form-group input {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.form-group input:focus {
+    outline: none;
+    background-color: #fff;
+    color: #000;
+}
+
+.submit-btn {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+    padding: 15px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* USER INFO */
+.user-info {
+    text-align: center;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    margin-top: 0;
+}
+
+.user-name-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.hourglass-icon {
+    width: 22px;
+    height: 31px;
+    flex-shrink: 0;
+}
+
+.user-info h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+}
+
+.user-info p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+/* LIFE GRID */
+.calendar-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.life-grid {
+    display: grid;
+    grid-template-columns: repeat(52, 3px);
+    grid-auto-rows: 3px;
+    gap: 3px;
+    width: fit-content;
+    overflow-x: auto;
+}
+
+.life-grid.month-view {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.month-row {
+    display: grid;
+    gap: 1px;
+    margin-bottom: 0px;
+    grid-template-columns: 40px repeat(31, 2px);
+    align-items: center;
+}
+
+.year-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    height: fit-content;
+    min-height: 0;
+    width: fit-content;
+    justify-content: center;
+}
+
+.year-group-label {
+    font-size: 0.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 2px;
+    padding: 2px;
+    border: 1px solid #fff;
+}
+
+.month-label {
+    font-size: 0.4rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    padding-right: 3px;
+}
+
+.day-circle {
+    width: 2px !important;
+    height: 2px !important;
+    border: 0.5px solid #333;
+    background-color: #000;
+    border-radius: 0;
+    transition: background-color 0.1s ease;
+    min-width: 2px;
+    min-height: 2px;
+    max-width: 2px;
+    max-height: 2px;
+}
+
+.day-circle.lived {
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.day-circle:hover {
+    border-color: #fff;
+}
+
+/* SEARCH SECTION */
+.search-section {
+    margin-bottom: 20px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.search-controls {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.journal-date-input {
+    background-color: #000;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.journal-btn {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #fff;
+    padding: 8px 15px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.journal-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header h1 {
+        font-size: 2rem;
+    }
+    
+    section {
+        padding: 20px;
+    }
+    
+    .life-grid {
+        grid-template-columns: repeat(26, 3px);
+        grid-auto-rows: 3px;
+    }
+    
+    .day-circle {
+        width: 3px !important;
+        height: 3px !important;
+        min-width: 3px;
+        min-height: 3px;
+        max-width: 3px;
+        max-height: 3px;
+    }
+    
+    .search-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* SVG ICON STYLES */
+.btn-icon {
+    width: 16px;
+    height: 16px;
+    filter: invert(0);
+    transition: all 0.15s ease;
+}
+
+.play-btn:hover .btn-icon,
+.mute-btn:hover .btn-icon,
+.nav-btn:hover .btn-icon {
+    filter: invert(1);
+}

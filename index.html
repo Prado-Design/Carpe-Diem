@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpe Diem</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="main">
+            <!-- User Profile Section -->
+            <section class="profile-section" id="profileSection">
+                <h2>ENTER YOUR INFORMATION</h2>
+                <form id="profileForm" class="profile-form">
+                    <div class="form-group">
+                        <label for="name">NAME:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthDate">BIRTH DATE:</label>
+                        <input type="date" id="birthDate" name="birthDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">BIRTH LOCATION:</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                    <button type="submit" class="submit-btn">GENERATE CALENDAR</button>
+                </form>
+            </section>
+
+            <!-- Life Calendar Section -->
+            <div class="calendar-section" id="calendarSection" style="display: none;">
+            <div class="user-info">
+                <div class="user-name-container">
+                    <img src="assets/hourglass.svg" alt="Hourglass" class="hourglass-icon">
+                    <h2 id="userName"></h2>
+                    <img src="assets/hourglass.svg" alt="Hourglass" class="hourglass-icon">
+                </div>
+                <p id="userDetails"></p>
+                <p id="lifeStats"></p>
+            </div>
+            
+            <!-- Dieter Rams Brutalist Media Player -->
+            <div class="media-player">
+                <audio id="backgroundMusic" loop>
+                    <source src="music.mp3" type="audio/mpeg">
+                    <source src="music.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+                
+                <div class="player-container">
+                    <div class="top-section">
+                        <div class="record-display">
+                            <div class="record" id="record">
+                                <div class="record-grooves"></div>
+                                <div class="record-center"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="track-info">
+                            <div class="track-number" id="trackNumber">01</div>
+                            <div class="track-title" id="trackTitle">DIES IRAE</div>
+                            <div class="track-artist" id="trackArtist">GREGORIAN CHANT</div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-section">
+                        <div class="time-display">
+                            <span id="currentTime">0:00</span>
+                            <span id="totalTime">0:00</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-track"></div>
+                            <div class="progress-fill" id="progressFill"></div>
+                            <div class="progress-handle" id="progressHandle"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="player-controls">
+                        <button id="prevBtn" class="nav-btn">
+                            <img src="assets/previous.svg" alt="Previous" class="btn-icon">
+                        </button>
+                        <button id="playPauseBtn" class="play-btn">
+                            <img src="assets/play.svg" alt="Play" class="btn-icon" id="playIcon">
+                        </button>
+                        <button id="nextBtn" class="nav-btn">
+                            <img src="assets/next.svg" alt="Next" class="btn-icon">
+                        </button>
+                        <button id="muteBtn" class="mute-btn">
+                            <img src="assets/sound.svg" alt="Mute" class="btn-icon" id="muteIcon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+                
+                <!-- Date Search Section -->
+                <div class="search-section">
+                    <div class="search-controls">
+                        <input type="date" id="journalDate" class="journal-date-input">
+                        <button id="addJournalBtn" class="journal-btn">SEARCH</button>
+                    </div>
+                </div>
+                
+                <div class="calendar-container">
+                    <div id="lifeGrid" class="life-grid"></div>
+                </div>
+            </div>
+        </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/calendar.js"></script>
+    <script src="js/journal.js"></script>
+    <script src="js/audio.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
