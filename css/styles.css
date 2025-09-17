@@ -378,7 +378,8 @@ section h2, section h3 {
     letter-spacing: 0.05em;
 }
 
-.form-group input {
+.form-group input,
+.form-group select {
     background-color: #000;
     color: #fff;
     border: 2px solid #fff;
@@ -388,10 +389,21 @@ section h2, section h3 {
     font-weight: bold;
 }
 
-.form-group input:focus {
+.form-group input:focus,
+.form-group select:focus {
     outline: none;
     background-color: #fff;
     color: #000;
+}
+
+.form-group select {
+    cursor: pointer;
+}
+
+.form-group select option {
+    background-color: #000;
+    color: #fff;
+    padding: 8px;
 }
 
 .submit-btn {
@@ -610,6 +622,23 @@ section h2, section h3 {
     .life-grid {
         grid-template-columns: repeat(26, 3px);
         grid-auto-rows: 3px;
+    }
+    
+    .life-grid.month-view {
+        overflow-x: auto;
+        overflow-y: visible;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding-bottom: 20px;
+    }
+    
+    .life-grid.month-view::-webkit-scrollbar {
+        display: none; /* WebKit browsers (Chrome, Safari, Edge) */
     }
     
     .day-circle {
